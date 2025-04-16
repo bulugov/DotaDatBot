@@ -30,7 +30,7 @@ def fetch_and_save_heroes():
     response = requests.get(f"{BASE_URL}/heroes")
     if response.status_code == 200:
         hero_data = response.json()
-        with open(HEROES_FILE, "w") as f: 
+        with open(HEROES_FILE, "w") as f:
             json.dump(hero_data, f)
         return {hero["id"]: hero["localized_name"] for hero in hero_data}
     return {}
