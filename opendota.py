@@ -47,7 +47,6 @@ def get_hero_dict():
     else:
         return fetch_and_save_heroes()
 
-
 def get_latest_match(account_id):
     response = requests.get(f"{BASE_URL}/players/{account_id}/recentMatches")
     return response.json()[0] if response.status_code == 200 else None

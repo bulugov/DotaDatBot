@@ -1,7 +1,7 @@
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 import requests
-from opendota import get_latest_match, get_hero_dict, get_player_info, get_player_win_loss, rank_tier_to_name
+from opendota import *
 from userdata import link_user, get_linked_account
 
 BOT_TOKEN = "7924889946:AAEuaMJ34oYH7dnCg7BOQawuePR7q_ZFIBk"
