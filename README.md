@@ -1,7 +1,7 @@
 ````markdown
 # DotaDatBot 🎮
 
-DotaDatBot is a Telegram bot that connects to the [OpenDota API](https://docs.opendota.com/) to fetch Dota 2 player data, recent match summaries, and display match scoreboards — now with hero icons!
+DotaDatBot is a Telegram bot that connects to the [OpenDota API](https://docs.opendota.com/) to fetch Dota 2 player data, recent match summaries, and display match scoreboards
 
 ## 🚀 Features
 
