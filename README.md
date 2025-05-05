@@ -16,7 +16,7 @@ DotaDatBot is a Telegram bot that connects to the [OpenDota API](https://docs.op
 ```bash
 git clone https://github.com/bulugov/DotaDatBot.git
 cd DotaDatBot
-````
+```
 
 ### 2. Create and activate a virtual environment
 
