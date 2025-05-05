@@ -34,7 +34,7 @@ pip install -r requirements.txt
 
 ### 4. Configure your bot
 
-Create a `.env` file (or replace directly in `bot.py`) with your Telegram Bot token:
+Create a `.env` file with your Telegram Bot token:
 
 ```env
 BOT_TOKEN=your_telegram_bot_token
