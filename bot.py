@@ -1,19 +1,23 @@
+import io
+import os
+
+import requests
+from dotenv import load_dotenv
+from PIL import Image, ImageDraw, ImageFont
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
-import requests
-from PIL import Image, ImageDraw, ImageFont
-import io
 
 from opendota import (
-    get_latest_match,
     get_hero_dict,
+    get_latest_match,
     get_player_info,
     get_player_win_loss,
     rank_tier_to_name,
 )
-from userdata import link_user, get_linked_account
+from userdata import get_linked_account, link_user
 
-BOT_TOKEN = "7924889946:AAEtU7sS32JscfoY5WxCtLmK3FdK-8hFrB4"
+load_dotenv()
+BOT_TOKEN = os.getenv("BOT_TOKEN")
 OPEN_DOTA_URL = "https://api.opendota.com/api"
 
 # Cache heroes on startup
