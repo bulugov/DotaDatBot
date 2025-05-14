@@ -177,3 +177,4 @@ cython_debug/
 user_links.json
 heroes.json
 hero_icons/
+.DS_Store
