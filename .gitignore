@@ -173,6 +173,7 @@ cython_debug/
 # PyPI configuration file
 .pypirc
 
-# Personal Data
-heroes.json
+.env
 user_links.json
+heroes.json
+hero_icons/

@@ -58,3 +58,12 @@ def get_player_info(account_id):
 def get_player_win_loss(account_id):
     response = requests.get(f"{BASE_URL}/players/{account_id}/wl")
     return response.json() if response.status_code == 200 else None
+
+def get_match_details(match_id):
+    try:
+        response = requests.get(f"https://api.opendota.com/api/matches/{match_id}")
+        if response.status_code == 200:
+            return response.json()
+    except Exception as e:
+        print(f"Error fetching match details: {e}")
+    return None
