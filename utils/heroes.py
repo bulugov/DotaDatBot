@@ -9,6 +9,7 @@ os.makedirs(ICON_DIR, exist_ok=True)
 
 hero_dict = {}
 
+
 def load_hero_dict():
     global hero_dict
     if not hero_dict:
@@ -16,6 +17,7 @@ def load_hero_dict():
             data = json.load(f)
             hero_dict.update({h["id"]: h["localized_name"] for h in data})
     return hero_dict
+
 
 def get_hero_icon(hero_name):
     file_name = hero_name.lower().replace(" ", "_").replace("-", "") + "_full.png"

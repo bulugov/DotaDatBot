@@ -5,10 +5,11 @@ import os
 BASE_URL = "https://api.opendota.com/api"
 HEROES_FILE = "heroes.json"
 
+
 def rank_tier_to_name(rank_tier):
     if not rank_tier:
         return "Unranked"
-    
+
     tiers = {
         1: "Herald",
         2: "Guardian",
@@ -24,7 +25,8 @@ def rank_tier_to_name(rank_tier):
     star = rank_tier % 10
 
     rank_name = tiers.get(tier, "Unknown")
-    return f"{rank_name} {star}" if tier < 8 else rank_name 
+    return f"{rank_name} {star}" if tier < 8 else rank_name
+
 
 def fetch_and_save_heroes():
     response = requests.get(f"{BASE_URL}/heroes")
@@ -34,6 +36,7 @@ def fetch_and_save_heroes():
             json.dump(hero_data, f)
         return {hero["id"]: hero["localized_name"] for hero in hero_data}
     return {}
+
 
 def get_hero_dict():
     if os.path.exists(HEROES_FILE):
@@ -47,17 +50,21 @@ def get_hero_dict():
     else:
         return fetch_and_save_heroes()
 
+
 def get_latest_match(account_id):
     response = requests.get(f"{BASE_URL}/players/{account_id}/recentMatches")
     return response.json()[0] if response.status_code == 200 else None
+
 
 def get_player_info(account_id):
     response = requests.get(f"{BASE_URL}/players/{account_id}")
     return response.json() if response.status_code == 200 else None
 
+
 def get_player_win_loss(account_id):
     response = requests.get(f"{BASE_URL}/players/{account_id}/wl")
     return response.json() if response.status_code == 200 else None
+
 
 def get_match_details(match_id):
     try:

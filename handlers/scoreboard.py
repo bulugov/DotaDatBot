@@ -10,12 +10,15 @@ import io
 
 load_hero_dict()
 
+
 async def scoreboard(update: Update, context: ContextTypes.DEFAULT_TYPE):
     telegram_id = update.effective_user.id
     account_id = get_linked_account(telegram_id)
 
     if not account_id:
-        await update.message.reply_text("❌ You haven't linked your Dota account yet. Use /link <account_id>")
+        await update.message.reply_text(
+            "❌ You haven't linked your Dota account yet. Use /link <account_id>"
+        )
         return
 
     latest = get_latest_match(account_id)
@@ -58,6 +61,9 @@ async def scoreboard(update: Update, context: ContextTypes.DEFAULT_TYPE):
     img.save(stream, format="PNG")
     stream.seek(0)
 
-    await update.message.reply_photo(photo=stream, caption=f"🧾 Full Match Scoreboard\nMatch ID: {match_id}")
+    await update.message.reply_photo(
+        photo=stream, caption=f"🧾 Full Match Scoreboard\nMatch ID: {match_id}"
+    )
+
 
 handler = CommandHandler("scoreboard", scoreboard)
